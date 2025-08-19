@@ -20,28 +20,18 @@ func Palindrome(str string) bool {
 	fIndex := 0
 	lIndex := stringLength - 1
 
-	if stringLength%2 == 0 {
-		midIndex := stringLength / 2
-		for fIndex != lIndex {
-			if fIndex > midIndex {
-				return true
-			}
-			if str[fIndex] == str[lIndex] {
-				fIndex++
-				lIndex--
-			} else {
-				return false
-			}
+	midIndex := stringLength / 2
+	for fIndex != lIndex {
+		if fIndex > midIndex {
+			return true
 		}
-	} else {
-		for fIndex != lIndex {
-			if str[fIndex] == str[lIndex] {
-				fIndex++
-				lIndex--
-			} else {
-				return false
-			}
+		if str[fIndex] == str[lIndex] {
+			fIndex++
+			lIndex--
+		} else {
+			return false
 		}
 	}
+
 	return true
 }
